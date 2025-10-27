@@ -2,8 +2,6 @@ import { Button } from "@/components/ui/button"
 import { useState } from "react";
 
 function RedLight( {color}: {color: string}) {
-
-    console.log("color123", color)
     const [disableRedColor, setDisableRedColor] = useState(false)
 
     function handleDisableRedColor(){
@@ -13,8 +11,6 @@ function RedLight( {color}: {color: string}) {
             setDisableRedColor(false)
         }
     }
-
-    console.log("red comp", color)
 
     return(
         <Button

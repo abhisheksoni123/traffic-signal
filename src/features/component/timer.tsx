@@ -12,37 +12,26 @@ function Timer(
     const intervalRef = useRef<NodeJS.Timeout>(null);
 
     const handleStart = () => {
-
-        console.log("seconds123", seconds)
-        if (!isRunning) {
-            setIsRunning(true);
-            intervalRef.current = setInterval(() => {
-                    setSeconds((prev) => prev + 1);
-                    setColor("red")
-                   
-                  
-            }, 1000);   
-        }
+        setSeconds(0)
+        intervalRef.current = setInterval(() => {
+                setSeconds((prev) => prev + 1);
+                setColor("red");
+                setIsRunning(true);
+        }, 1000);   
     };
 
     const handleStop = () => {
-        if (isRunning) {
-            setIsRunning(true);
             clearInterval(intervalRef.current);
+            setIsRunning(false)
             return;
-        }
     }
 
     const handleResume = () => {
-        if (isRunning) {
-            setIsRunning(true);
-            intervalRef.current = setInterval(() => {
-                    setSeconds((seconds) => seconds + 1);
-                    setColor("red")
-                   
-                  
-            }, 1000);   
-        }
+        setIsRunning(true);
+        intervalRef.current = setInterval(() => {
+                setSeconds((seconds) => seconds + 1);
+                setColor("red")
+        }, 1000);    
     }
 
     useEffect(() => {
@@ -53,15 +42,15 @@ function Timer(
     
     return(
         <div className="flex items-center justify-center flex-col ">
-            <Button className="bg-pink-900 mb-10" onClick={handleStart}>
+            <Button className="bg-green-900 mb-10" disabled={isRunning} onClick={handleStart}>
                 Start
             </Button>
 
-            <Button className="bg-pink-900 mb-10" onClick={handleResume}>
+            <Button className="bg-blue-500 mb-10" disabled={isRunning} onClick={handleResume}>
                 Resume
             </Button>
 
-            <Button className="bg-pink-900 mb-10" onClick={handleStop}>
+            <Button className="bg-red-700 mb-10" onClick={handleStop}>
                 Stop
             </Button>
             <span>{seconds}s</span>
