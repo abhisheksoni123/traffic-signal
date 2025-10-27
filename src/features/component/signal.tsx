@@ -11,7 +11,7 @@ function Signal() {
             <div>
                 <Timer setColor={setColor}/>
             </div>
-            <div className="flex items-center justify-center bg-gray-100 h-screen">
+            <div className="flex items-center justify-center h-screen">
                 <div className="flex gap-6">
                     <RedLight color={color} />
                     <YellowLight color={color} />

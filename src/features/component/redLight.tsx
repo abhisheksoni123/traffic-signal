@@ -4,14 +4,6 @@ import { useState } from "react";
 function RedLight( {color}: {color: string}) {
     const [disableRedColor, setDisableRedColor] = useState(false)
 
-    function handleDisableRedColor(){
-        if(!disableRedColor){
-            setDisableRedColor(true)
-        }else{
-            setDisableRedColor(false)
-        }
-    }
-
     return(
         <Button
         className={`rounded-lg bg-red-500 border-black ${

@@ -30,7 +30,6 @@ function Timer(
         setIsRunning(true);
         intervalRef.current = setInterval(() => {
                 setSeconds((seconds) => seconds + 1);
-                setColor("red")
         }, 1000);    
     }
 
@@ -41,7 +40,7 @@ function Timer(
       });
     
     return(
-        <div className="flex items-center justify-center flex-col ">
+        <div className="flex items-center justify-center flex-col">
             <Button className="bg-green-900 mb-10" disabled={isRunning} onClick={handleStart}>
                 Start
             </Button>
