@@ -43,20 +43,25 @@ function Timer(
     });
 
     return(
-        <div className="flex items-center justify-center flex-col">
-            <Button className="bg-green-900 mb-10" disabled={isRunning} onClick={handleStart}>
-                Start
-            </Button>
+        <>
+            <div className="flex items-center justify-center">
+                <span>{seconds}s</span>
+            </div>
+            <div className="flex items-center justify-center space-x-4 p-4">
+                <Button className="bg-green-900 mb-10" disabled={isRunning} onClick={handleStart}>
+                    Start
+                </Button>
 
-            <Button className="bg-blue-500 mb-10" disabled={isRunning} onClick={handleResume}>
-                Resume
-            </Button>
+                <Button className="bg-blue-500 mb-10" disabled={isRunning} onClick={handleResume}>
+                    Resume
+                </Button>
 
-            <Button className="bg-red-700 mb-10" onClick={handleStop}>
-                Stop
-            </Button>
-            <span>{seconds}s</span>
-        </div>
+                <Button className="bg-red-700 mb-10" onClick={handleStop}>
+                    Stop
+                </Button>
+            </div>
+        </>
+       
     )
 }
 export default Timer;
