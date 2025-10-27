@@ -8,10 +8,10 @@ function Signal() {
     const [color, setColor] = useState("");
     return(
         <div>
-            <div>
+            <div className="p-8">
                 <Timer setColor={setColor}/>
             </div>
-            <div className="flex items-center justify-center h-screen">
+            <div className="flex items-center justify-center pt-10">
                 <div className="flex gap-6">
                     <RedLight color={color} />
                     <YellowLight color={color} />

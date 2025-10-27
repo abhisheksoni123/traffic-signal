@@ -2,17 +2,14 @@ import { Button } from "@/components/ui/button"
 import { useState } from "react";
 
 function RedLight( {color}: {color: string}) {
-    const [disableRedColor, setDisableRedColor] = useState(false)
-
     return(
-        <Button
+      <Button
         className={`rounded-lg bg-red-500 border-black ${
           color === "red" ? "opacity-100" : "opacity-50"
         }`}
       >
-      
-            Red Light
-        </Button>
+        Red Light
+      </Button>
         
     )
 }
